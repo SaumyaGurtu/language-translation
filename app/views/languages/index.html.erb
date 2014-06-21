@@ -1,0 +1,17 @@
+<h1>Listing Languages</h1>
+<p><b><%= link_to '+New language', new_language_path %></b></p>
+ 
+<table class="reference" style="width:45%">
+  <tr>
+    <th>Category/Name</th>
+    <th colspan="2"></th>
+  </tr>
+  <% @languages.each do |language| %>
+    <tr>
+      <td><%= language.name %></td>
+      <td><%= link_to 'Edit', edit_language_path(language) %></td>
+      <td><%= link_to 'Delete', language_path(language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<p><a href="#top">Return to Top</a></p>
