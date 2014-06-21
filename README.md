@@ -12,7 +12,7 @@
 12. Language names are added by user. Later, this functionality will be exercised by administrator only.
 13. Listing articles page shows articles after the user submits the language name ,i.e., the pictures are categorised on basis of language names.
 14. Language name in any article user can choose it from a drop down box which has only those language names which were added under the "Languages" tab ( languages added by administrator.) or none option if the language name is not in the shown list of languages. This will help peace corps to train their volunteers at any installation, post or site in any language without any restriction.
-15. Sites in an installation can be added, edited or deleted fromm the show page of each installation contact information.
+15. Sites in an installation can be added, edited or deleted from the show page of each installation contact information.
 16. What are posts?
 
 Permissions for various functions will be changed later.
