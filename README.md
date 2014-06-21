@@ -17,3 +17,9 @@
 
 Permissions for various functions will be changed later.
 
+How to run this application?
+1. Download the zip file from : https://github.com/SaumyaGurtu/PLT link.
+2. Extract the folder and type "cd foldername"
+3. Do "rake db:migrate"
+4. Do "rails server" and open the link it asks you to in your web browser.
+5. Now use the application as you like :)
