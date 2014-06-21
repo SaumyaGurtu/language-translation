@@ -1,9 +1,9 @@
-<h1>Listing posts</h1>
-<p><b><%= link_to '+New post', new_article_path %></b></p>
+<h1>Listing articles</h1>
+<p><u><b><%= link_to '+New post', new_article_path %></b></u></p>
  
-<table class="reference" style="width:45%">
+<table class="reference" style="width:45%; border:5; cellpadding:4; cellspacing:3">
   <tr>
-    <th>Category</th>
+    <th>Language</th>
     <th>English Text</th>
     <th>Phonetic Text</th>
     <th>Picture</th>
@@ -22,4 +22,5 @@
     </tr>
   <% end %>
 </table>
+<hr/>
 <p><a href="#top">Return to Top</a></p>
