@@ -4,6 +4,7 @@
 <table class="reference" style="width:45%; border:5; cellpadding:4; cellspacing:3">
   <tr>
     <th>Language</th>
+    <th>Category</th>
     <th>English Text</th>
     <th>Phonetic Text</th>
     <th>Picture</th>
@@ -12,6 +13,7 @@
  
   <% @articles.each do |article| %>
     <tr>
+      <td><%= article.language_id %></td>
       <td><%= article.category %></td>
       <td><%= article.english %></td>
       <td><%= article.phonetic %></td>

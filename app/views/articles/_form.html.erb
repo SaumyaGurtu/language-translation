@@ -12,6 +12,10 @@
   <% end %>
   <p>
     <%= f.label :Language %><br>
+    <%= f.collection_select(:language_id, Language.all, :id, :name, :include_blank => "None of below") %>
+  </p>
+  <p>
+    <%= f.label :Category %><br>
     <%= f.text_field :category %>
   </p>
   <p>
@@ -26,6 +30,7 @@
 
   <p>
     <%= f.label :Picture %><br>
+    <%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
     <%= f.file_field :picture %> 
   </p>
 

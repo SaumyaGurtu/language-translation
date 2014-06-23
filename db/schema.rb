@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621070207) do
+ActiveRecord::Schema.define(version: 20140623095050) do
 
   create_table "articles", force: true do |t|
     t.text     "english"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20140621070207) do
     t.datetime "updated_at"
     t.string   "category"
     t.string   "picture"
+    t.integer  "language_id"
   end
+
+  add_index "articles", ["language_id"], name: "index_articles_on_language_id"
 
   create_table "installations", force: true do |t|
     t.string   "installation"
