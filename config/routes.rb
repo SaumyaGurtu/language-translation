@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :articles
-  resources :installations
+  resources :installations do
+    resources :sites
+  end
   resources :languages
 
   # The priority is based upon order of creation: first created -> highest priority.

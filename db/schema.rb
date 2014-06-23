@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623095050) do
+ActiveRecord::Schema.define(version: 20140623201407) do
 
   create_table "articles", force: true do |t|
     t.text     "english"
@@ -39,5 +39,14 @@ ActiveRecord::Schema.define(version: 20140623095050) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sites", force: true do |t|
+    t.string   "name"
+    t.integer  "installation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sites", ["installation_id"], name: "index_sites_on_installation_id"
 
 end
