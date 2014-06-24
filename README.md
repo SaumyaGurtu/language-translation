@@ -25,6 +25,12 @@ User Permissions for various functions will be changed later (after integration 
 3. Installation(id: integer, installation: string, email: string, address: text, contact: string, created_at: datetime, updated_at: datetime)
 4. Site(id: integer, name: string, installation_id: integer, created_at: datetime, updated_at: datetime)
 
+=> Framework and specifications:
+
+1. Rails 4.1.1
+2. Ruby 2.1.2p95
+3. Sqlite3
+
 =>How to run this application?
 
 1. Download the zip file from : https://github.com/SaumyaGurtu/PLT link.
