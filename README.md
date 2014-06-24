@@ -13,10 +13,17 @@
 13. Language name in any article user can choose it from a drop down box which has only those language names which were added under the "Languages" tab ( languages added by administrator.) or none option if the language name is not in the shown list of languages. This will help peace corps to train their volunteers at any installation, post or site in any language without any restriction.
 14. All articles of a paticular language can be seen under the "Languages" tab. User has to click on "Articles" link beside the language name for selecting a paticular language. Volunteers can click on this link for their training in a paticular language.
 15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
-15. Sites in an installation can be added or deleted from the show page of each installation contact information.
+16. Sites in an installation can be added or deleted from the show page of each installation contact information.
 
 
 User Permissions for various functions will be changed later (after integration of sign in).
+
+=> Models in application:
+
+1. Article(id: integer, english: text, phonetic: text, created_at: datetime, updated_at: datetime, category: string, picture: string, language_id: integer)
+2.  Language(id: integer, name: string, created_at: datetime, updated_at: datetime)
+3. Installation(id: integer, installation: string, email: string, address: text, contact: string, created_at: datetime, updated_at: datetime)
+4. Site(id: integer, name: string, installation_id: integer, created_at: datetime, updated_at: datetime)
 
 =>How to run this application?
 
