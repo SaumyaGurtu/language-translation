@@ -10,9 +10,11 @@
 10. If there are any errors then the form is not submitted and shows errors to users.
 11. When user tries to delete an entry then it sends a warning asking: "Are you sure?"
 12. Language names are added by user. Later, this functionality will be exercised by administrator only.
-13. Listing articles page shows articles after the user submits the language name ,i.e., the pictures are categorised on basis of language names.
-14. Language name in any article user can choose it from a drop down box which has only those language names which were added under the "Languages" tab ( languages added by administrator.) or none option if the language name is not in the shown list of languages. This will help peace corps to train their volunteers at any installation, post or site in any language without any restriction.
-15. Sites in an installation can be added, edited or deleted from the show page of each installation contact information.
+13. Language name in any article user can choose it from a drop down box which has only those language names which were added under the "Languages" tab ( languages added by administrator.) or none option if the language name is not in the shown list of languages. This will help peace corps to train their volunteers at any installation, post or site in any language without any restriction.
+14. All articles of a paticular language can be seen under the "Languages" tab. User has to click on "Articles" link beside the language name for selecting a paticular language. Volunteers can click on this link for their training in a paticular language.
+15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
+15. Sites in an installation can be added or deleted from the show page of each installation contact information.
+
 
 User Permissions for various functions will be changed later (after integration of sign in).
 
