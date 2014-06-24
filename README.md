@@ -16,6 +16,7 @@
 14. All articles of a paticular language can be seen under the "Languages" tab. User has to click on "Articles" link beside the language name for selecting a paticular language. Volunteers can click on this link for their training in a paticular language.
 15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
 16. Sites in an installation can be added or deleted from the show page of each installation contact information.
+17. Empty string will not be taken as site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created.
 
 
 User Permissions for various functions will be changed later (after integration of sign in).
