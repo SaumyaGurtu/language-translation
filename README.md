@@ -1,7 +1,9 @@
+=>Features:
+
 1. Upload picture of object.
-2. Add content (text) and language name to picture in English.
+2. Add content (text-about the picture in English and category- like rivers,food,adjective,pronoun,etc. ) and language name to picture in English.
 3. Add content to picture with phonetic text ( It is pronunciation of word of local language – Chuukese here - expressed in english text. Example, building: the phonetic text might be "Bill-Ding". )
-4. New article containing a picture, text in English with phonetic text in a particular language and language name is created if a picture or English text or phonetic text fields are filled ,i.e., there is no need for all fields to be filled completely.
+4. New article containing a picture, text and category in English with phonetic text in a particular language and language name is created if a picture or English text or phonetic text fields are filled ,i.e., there is no need for all fields to be filled completely.
 5. User is able to upload picture. List of articles shows "Uploaded" in column of Picture if the picture is uploaded by user. This picture can be seen by clicking on "Show" link just beside the article.
 6. User is able to add content and language name to picture in English.
 7. User is able to add content to picture with phonetic text.

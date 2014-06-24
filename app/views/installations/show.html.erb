@@ -18,17 +18,18 @@
   <%= @installation.contact %>
 </p>
 
-<h2>Sites:</h2><ol>
+<p><strong>Sites:</strong><ol>
 <% @installation.sites.each do |site| %>
   <li>
           <%= site.name %>
   </li>	     
     <p><%= link_to 'Delete', [site.installation, site], method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<% end %></ol>
-
+<% end %></ol></p>
 
 <h2>Add a site:</h2>
 <%= form_for([@installation, @installation.sites.build]) do |f| %>
+  <% if @installation.sites.build.errors.any? %>
+   <% end %>
    <p>
 	<%= f.label :Name %><br>
 	<%= f.text_field :name %>
@@ -37,7 +38,6 @@
 	<%= f.submit %>
    </p>
 <% end %>
-
 <%= link_to 'Back', installations_path %>
 <%= link_to 'Edit', edit_installation_path(@installation) %>
 <p><a href="#top">Return to Top</a></p>
