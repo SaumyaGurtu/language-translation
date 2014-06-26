@@ -1,5 +1,4 @@
-=>Features:
-
+## Features:
 1. Upload picture of object.
 2. Add content (text-about the picture in English and category- like rivers,food,adjective,pronoun,etc. ) and language name to picture in English.
 3. Add content to picture with phonetic text ( It is pronunciation of word of local language – Chuukese here - expressed in english text. Example, building: the phonetic text might be "Bill-Ding". )
@@ -18,29 +17,32 @@
 16. Sites in an installation can be added or deleted from the show page of each installation contact information.
 17. Empty string will not be taken as site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created.
 
-## Using Devise
+## Using Devise 3.2.4
 18. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
-19. Sign In (Log In) using username and password.
-20. Fields like Gender, location, contact number, email id can be added later after sign up form, by clicking on "edit profile" link.
+19. Sign In (Log In) using username and password. (Unique username)
+20. Fields like Gender, location, contact number, email id can be added later after sign up form, by clicking on "Edit Profile" link.
 21. In every sign up form, login approval is 'Not Yet' by default, which will be set by admin for volunteers to login and volunteers and admin for contributers to log in.
 
+## Using CanCan
+22. Articles posted by any user is approved by volunteers. If the volunteer doesn't approve of the article, he/she may delete it.
+23. Any user can edit a posted article.
+24. Approve the signed up contributers to log into the application.
+25. All permissions to admin.
 
-User Permissions for various functions will be changed later (after integration of sign in).
-
-=> Models in application:
+## Models in application:
 
 1. Article(id: integer, english: text, phonetic: text, created_at: datetime, updated_at: datetime, category: string, picture: string, language_id: integer)
 2.  Language(id: integer, name: string, created_at: datetime, updated_at: datetime)
 3. Installation(id: integer, installation: string, email: string, address: text, contact: string, created_at: datetime, updated_at: datetime)
 4. Site(id: integer, name: string, installation_id: integer, created_at: datetime, updated_at: datetime)
 
-=> Framework and specifications:
+## Framework and specifications:
 
 1. Rails 4.1.1
 2. Ruby 2.1.2p95
 3. Sqlite3
 
-=>How to run this application?
+## How to run this application?
 
 1. Download the zip file from : https://github.com/SaumyaGurtu/PLT link.
 2. Extract the folder and type "cd foldername".

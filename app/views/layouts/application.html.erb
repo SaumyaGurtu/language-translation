@@ -2,15 +2,16 @@
 <html>
 <head>
   <title>Peace Corps</title>
-  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css" />
-  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap-theme.css" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css" />
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap-theme.css" / -->
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %> 
 </head>
-<body>
 
+<body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<%= render "shared/header" %>
 <div class="container">
 <div class="navbar-header">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,7 +48,8 @@ Logged in as <strong><%= current_user.username %></strong>. &nbsp;
 </div>
 </div>
 </nav>
-<div style="margin:30px">
+
+<div style="margin-top: 170px; margin-left: 100px">
  <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
  <% end %>
@@ -57,12 +59,10 @@ Logged in as <strong><%= current_user.username %></strong>. &nbsp;
   <%= yield %>
 </div>
 
-<!-- <footer>
-<div class="container">
-Peace Corps
-</div>
-</footer> -->
-<script src="http://railsgirls.com/assets/bootstrap.js"></script>
+<!-- script src="http://railsgirls.com/assets/bootstrap.js"></script -->
 
 </body>
+
+<%= render "shared/footer" %>
+
 </html>

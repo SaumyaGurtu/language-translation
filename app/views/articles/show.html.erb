@@ -19,7 +19,7 @@
  
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
+  <%= image_tag(@article.picture_url, :width => 400) if @article.picture.present? %>
 </p>
 
 <%= link_to 'Back', articles_path %>

@@ -29,7 +29,9 @@
   </p>
 
   <p>
-    <%= f.label :Picture %><br>
+    <%= f.label :Picture %>
+    <i><% if @article.picture.present? %> ( If you wish to change the picture, click on browse and upload the new file.)<% end %></i>
+    <br>
     <%= image_tag(@article.picture_url, :width => 600) if @article.picture.present? %>
     <%= f.file_field :picture %> 
   </p>
