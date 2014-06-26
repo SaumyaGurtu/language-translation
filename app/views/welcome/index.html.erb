@@ -1,5 +1,23 @@
-<h1>Log In</h1>
-<p><a href="#">Sign Up as Contributor</a></p>
-<p><a href="#">Sign Up as Volunteer</a></p>
-<p><a href="#">Forgot Password</a></p>
-<p><a href="#">Reset Password</a></p>
+<% if user_signed_in? %>
+<h3>Welcome  <%= current_user.username %>!</h3> 
+<br/>
+<b>First Name:</b> <%= current_user.first_name %> <br/>
+<br/>
+<b>Last Name:</b><%= current_user.last_name %> <br/>
+<br/>
+<b>Email id:</b><%= current_user.email %> <br/>
+<br/>
+<b>Gender:</b><%= current_user.gender %> <br/>
+<br/>
+<b>Location:</b><%= current_user.location %> <br/>
+<br/>
+<b>Contact Number:</b><%= current_user.contact %> <br/>
+<br/>
+<b>Role:</b><%= current_user.role %> <br/>
+<br/>
+<b>Login Approval:</b><%= current_user.login_approval %> <br/>
+<br/>
+<%= link_to 'Edit profile', edit_user_registration_path %>
+<% else %>
+<% end %>
+<p><a href="#top">Return to Top</a></p>

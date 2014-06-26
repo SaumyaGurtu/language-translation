@@ -1,0 +1,60 @@
+<h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :Username %><br />
+  <%= f.text_field :username %></div>
+
+  <div><%= f.label :First_Name %><br />
+  <%= f.text_field :first_name %></div>
+
+  <div><%= f.label :Last_Name %><br />
+  <%= f.text_field :last_name %></div>
+
+  <div><%= f.label :Role %><br />
+  <%= f.radio_button :role, 'Contributor', checked:true %> 
+  <%= label :role_contributor, 'Contributor' %>
+  <%= f.radio_button :role, 'Volunteer' %>
+  <%= label :role_volunteer, 'Volunteer' %>
+  <%= f.radio_button :role, 'Admin' %>
+  <%= label :role_admin, 'Admin' %>
+  </div>
+
+  <div><%= f.label :Gender %><br />
+  <%= f.radio_button :gender, 'Male', checked:true %> 
+  <%= label :gender_male, 'Male' %>
+  <%= f.radio_button :gender, 'Female' %>
+  <%= label :gender_female, 'Female' %>
+  </div>
+
+  <div><%= f.label :Email_id %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :Location %><br />
+  <%= f.text_field :location %></div>
+
+  <div><%= f.label :Contact_Number %><br />
+  <%= f.text_field :contact %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div><%= f.label :New_Password %><i> ( Type the old password here if you don't want to change the password. ) </i><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :New_Password_confirmation %><i> ( Retype the password which is filled in above field. ) </i><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.label :current_password %><br />
+    <%= f.password_field :current_password, autocomplete: "off" %></div>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

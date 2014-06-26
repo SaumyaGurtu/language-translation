@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Peace Corps</title>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css" />
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" />
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css" />
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap-theme.css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %> 
@@ -19,23 +19,41 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="/">Home</a>
+<a class="navbar-brand" href="/">User</a>
 </div>
 <div class="collapse navbar-collapse">
+<% if user_signed_in? %>
+<!-- if current_user.login_approval == 'Not Yet'
+ else -->
 <ul class="nav navbar-nav">
 <li class="active"><a href="/installations">Installations</a></li>
 <li class="active"><a href="/languages">Languages</a></li>
 <li class="active"><a href="/articles">Articles</a></li>
 <li class="active"><a href="#">Volunteers</a></li>
 <li class="active"><a href="#">Contributors</a></li>
-<li class="active"><a href="#">Profile</a></li>
-<li class="active"><a href="#">LogOut</a></li>
 </ul>
+<!-- end -->
+<p class="navbar-text pull-right">
+Logged in as <strong><%= current_user.username %></strong>. &nbsp;
+<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+</p>
+<% else %>
+<p class="navbar-text pull-right">
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+</p>
+<% end %>
 </div>
 </div>
 </nav>
-
 <div style="margin:30px">
+ <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+ <% end %>
+ <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+ <% end %>
   <%= yield %>
 </div>
 
@@ -44,7 +62,7 @@
 Peace Corps
 </div>
 </footer> -->
-<script src="//railsgirls.com/assets/bootstrap.js"></script>
+<script src="http://railsgirls.com/assets/bootstrap.js"></script>
 
 </body>
 </html>

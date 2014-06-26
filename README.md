@@ -17,6 +17,10 @@
 15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
 16. Sites in an installation can be added or deleted from the show page of each installation contact information.
 17. Empty string will not be taken as site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created.
+18. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
+19. Sign In (Log In) using username and password.
+20. Fields like Gender, location, contact number, email id can be added later after sign up form, by clicking on "edit profile" link.
+21. In every sign up form, login approval is 'Not Yet' by default, which will be set by admin for volunteers to login and volunteers and admin for contributers to log in.
 
 
 User Permissions for various functions will be changed later (after integration of sign in).

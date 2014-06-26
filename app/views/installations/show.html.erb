@@ -29,7 +29,7 @@
 <h2>Add a site:</h2>
 <%= form_for([@installation, @installation.sites.build]) do |f| %>
   <% if @installation.sites.build.errors.any? %>
-   <% end %>
+  <% end %>
    <p>
 	<%= f.label :Name %><br>
 	<%= f.text_field :name %>

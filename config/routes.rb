@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users,  :path_prefix => 'my'
+  resources :users
   resources :articles
   resources :installations do
     resources :sites
