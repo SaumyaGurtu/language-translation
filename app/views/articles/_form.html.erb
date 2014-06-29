@@ -12,7 +12,7 @@
   <% end %>
   <p>
     <%= f.label :Language %><br>
-     <%= f.collection_select(:language_id, Language.all, :id, :name, :include_blank => "None of below") %>
+    <%= f.collection_select(:language_id, Language.all, :id, :name, :include_blank => "None of below") %>
   </p>
   <p>
     <%= f.label :Category %><br>
@@ -40,4 +40,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-<p><a href="#top">Return to Top</a></p>

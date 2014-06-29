@@ -1,0 +1,61 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+      this volunteer contact information from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :First_Name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :Last_Name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_area :username %>
+  </p>
+ 
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_area :email %>
+  </p>
+
+  <p>
+    <%= f.label :Location %><br>
+    <%= f.select :location, options_for_select([['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
+		    ['Albania' ,'Albania'],]) %>
+    <!-- add the names of installations in the list here -->
+  </p>
+
+  <p>
+    <%= f.label :Contact_Number %><br>
+    <%= f.text_area :contact %>
+  </p>
+
+  <p>
+    <%= f.label :Gender %><br>
+    <%= f.text_area :gender %>
+  </p>
+
+  <p>
+    <%= f.label :Role %><br>
+    <%= f.text_area :role %>
+  </p>
+
+  <p>
+    <%= f.label :Login_Approval %><br>
+    <%= f.text_area :login_approval %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

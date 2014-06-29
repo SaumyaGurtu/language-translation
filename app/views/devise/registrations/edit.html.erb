@@ -32,7 +32,10 @@
   <%= f.email_field :email %></div>
 
   <div><%= f.label :Location %><br />
-  <%= f.text_field :location %></div>
+    <%= f.select :location, options_for_select([['' ,''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
+		    ['Albania' ,'Albania'],]) %>
+    <!-- add the names of installations in the list here -->
+  </div>
 
   <div><%= f.label :Contact_Number %><br />
   <%= f.text_field :contact %></div>

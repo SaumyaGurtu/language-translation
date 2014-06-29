@@ -7,11 +7,11 @@
 <h2>Articles</h2><ol>
 <% @language.articles.each do |article| %><li>
 <p>
-  <strong>Language</strong>
-  <%= article.language_id %>
+  <strong>Language:</strong>  <!-- remove this later because there is no need-->
+  <% if article.language_id == @language.id %><%= @language.name %><% end %>
 </p>
 <p>
-  <strong>Category</strong>
+  <strong>Category:</strong>
   <%= article.category %>
 </p>
 <p>

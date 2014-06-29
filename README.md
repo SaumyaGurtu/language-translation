@@ -16,18 +16,29 @@
 15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
 16. Sites in an installation can be added or deleted from the show page of each installation contact information.
 17. Empty string will not be taken as site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created.
+18. Articles, Volunteers and Contributors table are sorted in descending order,i.e., last created is at the top and the first created is at the bottom.
 
 ## Using Devise 3.2.4
-18. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
-19. Sign In (Log In) using username and password. (Unique username)
-20. Fields like Gender, location, contact number, email id can be added later after sign up form, by clicking on "Edit Profile" link.
-21. In every sign up form, login approval is 'Not Yet' by default, which will be set by admin for volunteers to login and volunteers and admin for contributers to log in.
+1. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
+2. Sign In (Log In) using username and password. (Unique username)
+3. Fields like Gender, location - dropdown list of installation names which need to be added in code if new installations are added - in app/views/devise/registrations/edit.html.erb and app/views/users/_form.html.erb , contact number, email id can be added later after sign up form, by clicking on "Edit Profile" link.
+4. In every sign up form, login approval is 'Not Yet' by default, which will be set by admin for volunteers to login and volunteers and admin for contributers to log in.
 
 ## Using CanCan
-22. Articles posted by any user is approved by volunteers. If the volunteer doesn't approve of the article, he/she may delete it.
-23. Any user can edit a posted article.
-24. Approve the signed up contributers to log into the application.
-25. All permissions to admin.
+1. Articles posted by any user is approved by volunteers. If the volunteer doesn't approve of the article, he/she may delete it.
+2. Any user can edit a posted article.
+3. Approve the signed up contributers to log into the application.
+4. All permissions to admin.
+
+CanCan is a great gem for implementing model permissions. The main reasons I chose CanCan are:
+
+The code written to check permissions is very readable.
+
+The code written to declare permissions is very concise and readable.
+
+It keeps permission logic in a single location so it is not duplicated across controllers, views, etc.
+
+Aliasing actions (read = index and show) creates more concise and readable code.
 
 ## Models in application:
 

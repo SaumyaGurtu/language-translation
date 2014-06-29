@@ -1,0 +1,46 @@
+<h1>Saved Volunteer Contact Information </h1>
+<p>
+  <strong>First Name:</strong>
+      <%= @user.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+      <%= @user.last_name %>
+</p>
+<p>
+  <strong>Username:</strong>
+      <%= @user.username %>
+</p>
+ 
+<p>
+  <strong>Gender:</strong>
+      <%= @user.gender %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+      <%= @user.email %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+      <%= @user.location %>
+</p>
+
+<p>
+  <strong>Contact Number:</strong>
+      <%= @user.contact %>
+</p>
+ 
+<p>
+  <strong>Role:</strong>
+      <%= @user.role %>
+</p>
+ 
+<p>
+  <strong>Login Approval:</strong>
+      <%= @user.login_approval %>
+</p>
+ 
+<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
