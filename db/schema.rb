@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629153426) do
+ActiveRecord::Schema.define(version: 20140629191348) do
 
   create_table "articles", force: true do |t|
     t.text     "english"
@@ -73,5 +73,14 @@ ActiveRecord::Schema.define(version: 20140629153426) do
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "volunteers", force: true do |t|
+    t.string   "vname"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "volunteers", ["site_id"], name: "index_volunteers_on_site_id"
 
 end

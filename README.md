@@ -14,9 +14,14 @@
 13. Language name in any article user can choose it from a drop down box which has only those language names which were added under the "Languages" tab ( languages added by administrator.) or none option if the language name is not in the shown list of languages. This will help peace corps to train their volunteers at any installation, post or site in any language without any restriction.
 14. All articles of a paticular language can be seen under the "Languages" tab. User has to click on "Articles" link beside the language name for selecting a paticular language. Volunteers can click on this link for their training in a paticular language.
 15. CAREFUL! : If a particular language is deleted, all the articles under that language are automatically deleted.
-16. Sites in an installation can be added or deleted from the show page of each installation contact information.
-17. Empty string will not be taken as site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created.
-18. Articles, Volunteers and Contributors table are sorted in descending order,i.e., last created is at the top and the first created is at the bottom.
+16. Volunteer names on a site can be added or deleted from the show page of each site information.
+17. Empty string will not be taken as Volunteer name. Hence, if you just click "Create Volunteer" without entering anything in the Volunteer name field, no volunteer will be created.
+18. Site names in an installation can be added or deleted under Sites tab.
+19. Empty string will not be taken as Site name. Hence, if you just click "Create Site" without entering anything in the name field, no site will be created  and the form will show an error message.
+20. All sites under an installation can be seen under Installations tab. Click "Show" for a particular installation to see all contact information of installation and number of sites in it. 
+21. CAREFUL! : If a particular site is deleted, all the volunteer names under that site are automatically deleted.
+22. CAREFUL! : If a particular installation is deleted, all the sites under that installation are automatically deleted.
+18. Articles, Sites, Volunteers and Contributors table are sorted in descending order,i.e., last created is at the top and the first created is at the bottom.
 
 ## Using Devise 3.2.4
 1. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
@@ -46,6 +51,8 @@ Aliasing actions (read = index and show) creates more concise and readable code.
 2.  Language(id: integer, name: string, created_at: datetime, updated_at: datetime)
 3. Installation(id: integer, installation: string, email: string, address: text, contact: string, created_at: datetime, updated_at: datetime)
 4. Site(id: integer, name: string, installation_id: integer, created_at: datetime, updated_at: datetime)
+5. Volunteer(id: integer, vname: string, site_id: integer, created_at: datetime, updated_at: datetime)
+6.  User(id: integer, encrypted_password: string, reset_password_token: string, reset_password_sent_at: datetime, remember_created_at: datetime, sign_in_count: integer, current_sign_in_at: datetime, last_sign_in_at: datetime, current_sign_in_ip: string, last_sign_in_ip: string, created_at: datetime, updated_at: datetime, first_name: string, last_name: string, email: string, username: string, location: string, contact: string, gender: string, role: string, login_approval: string)
 
 ## Framework and specifications:
 

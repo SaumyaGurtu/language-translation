@@ -1,19 +1,50 @@
 class SitesController < ApplicationController
-  def create
-     @installation = Installation.find(params[:installation_id])
-     @site = @installation.sites.create(site_params)
-     redirect_to installation_path(@installation)
+ def new
+  @site = Site.new
+ end
+
+ def index
+  @sites = Site.all
+ end
+
+ def create
+  @site = Site.new(site_params)
+ 
+  if @site.save
+   redirect_to @site
+  else
+   render 'new'
+  end
+ end
+
+ def edit
+  @site = Site.find(params[:id])
+ end
+
+ def destroy
+  @site = Site.find(params[:id])
+  @site.destroy
+ 
+  redirect_to sites_path
+ end
+
+ def show
+  @site = Site.find(params[:id])
+ end
+
+ def update
+  @site = Site.find(params[:id])
+ 
+  if @site.update(site_params)
+    redirect_to @site
+  else
+    render 'edit'
+  end
+ end
+ 
+ private
+  def site_params
+    params.require(:site).permit(:name, :installation_id)
   end
 
-  def destroy
-     @installation = Installation.find(params[:installation_id])
-     @site = @installation.sites.find(params[:id])
-     @site.destroy
-     redirect_to installation_path(@installation)
-  end
-
-  private
-    def site_params
-      params.require(:site).permit(:name)
-    end
 end

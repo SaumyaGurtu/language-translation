@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :installations do
     resources :sites
   end
+  resources :sites do
+    resources :volunteers
+  end
   resources :languages do
     resources :articles
   end
