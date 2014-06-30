@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+# if user is not logged in, then page will be redirected to login page
 
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
 
@@ -19,3 +20,8 @@ class ApplicationController < ActionController::Base
      end
   end
 end
+
+# customising devise generated tables.
+
+# flash messages/errors are present in config/locals/devise.en.yml
+# authentification criteria, password length, etc. is present in config/initialisers/devise.rb

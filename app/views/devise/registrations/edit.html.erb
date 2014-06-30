@@ -31,7 +31,8 @@
   <div><%= f.label :Email_id %><br />
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :Location %><br />
+  <div><%= f.label :Location %>
+  <i> ( Please select the correct location name, don't leave this field blank. )</i><br />
     <%= f.select :location, options_for_select([['' ,''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
 		    ['Albania' ,'Albania'],]) %>
     <!-- add the names of installations in the list here -->
@@ -43,14 +44,16 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
-  <div><%= f.label :New_Password %><i> ( Type the old password here if you don't want to change the password. ) </i><br />
+<br/>
+  <div>Fill the next 2 fields only if you want to change your password otherwise leave these fields blank.</div><br />
+  <div><%= f.label :New_Password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :New_Password_confirmation %><i> ( Retype the password which is filled in above field. ) </i><br />
+  <div><%= f.label :New_Password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %><br />
+  <div><%= f.label :current_password %>
+  <i> ( If you don't want to change your username or password then leave this field blank. ) </i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
   <div><%= f.submit "Update" %></div>

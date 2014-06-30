@@ -18,18 +18,15 @@
     <%= f.label :Last_Name %><br>
     <%= f.text_field :last_name %>
   </p>
-  <p>
-    <%= f.label :Username %><br>
-    <%= f.text_area :username %>
-  </p>
  
   <p>
     <%= f.label :Email %><br>
-    <%= f.text_area :email %>
+    <%= f.text_field :email %>
   </p>
 
   <p>
-    <%= f.label :Location %><br>
+    <%= f.label :Location %>
+  <i> ( Please select the correct location name, don't leave this field blank. )</i><br />
     <%= f.select :location, options_for_select([['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
 		    ['Albania' ,'Albania'],]) %>
     <!-- add the names of installations in the list here -->
@@ -37,22 +34,22 @@
 
   <p>
     <%= f.label :Contact_Number %><br>
-    <%= f.text_area :contact %>
+    <%= f.text_field :contact %>
   </p>
 
   <p>
     <%= f.label :Gender %><br>
-    <%= f.text_area :gender %>
+    <%= f.text_field :gender %>
   </p>
 
   <p>
     <%= f.label :Role %><br>
-    <%= f.text_area :role %>
+    <%= f.text_field :role %>
   </p>
 
   <p>
     <%= f.label :Login_Approval %><br>
-    <%= f.text_area :login_approval %>
+    <%= f.text_field :login_approval %>
   </p>
 
   <p>

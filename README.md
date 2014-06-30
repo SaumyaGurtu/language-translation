@@ -28,6 +28,8 @@
 2. Sign In (Log In) using username and password. (Unique username)
 3. Fields like Gender, location - dropdown list of installation names which need to be added in code if new installations are added - in app/views/devise/registrations/edit.html.erb and app/views/users/_form.html.erb , contact number, email id can be added later after sign up form, by clicking on "Edit Profile" link.
 4. In every sign up form, login approval is 'Not Yet' by default, which will be set by admin for volunteers to login and volunteers and admin for contributers to log in.
+5. Change password in "Edit Profile".
+6. Delete my own account under "Edit Profile".
 
 ## Using CanCan
 1. Articles posted by any user is approved by volunteers. If the volunteer doesn't approve of the article, he/she may delete it.

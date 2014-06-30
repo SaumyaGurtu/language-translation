@@ -33,8 +33,8 @@
       <td><%= user.login_approval %></td>
       <td><%= link_to 'Show', user_path(user) %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= link_to 'Approve', edit_user_path(user) %></td>
-      <td><%= link_to 'Refuse', edit_user_path(user) %></td>
+      <td><%= link_to 'Approve', user_path(user), method: :approve, data: { confirm: 'Are you sure to approve login for this user?' } %></td>
+      <td><%= link_to 'Refuse', user_path(user), method: :refuse, data: { confirm: 'Are you sure to refuse login to this user?' } %></td>
       <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
