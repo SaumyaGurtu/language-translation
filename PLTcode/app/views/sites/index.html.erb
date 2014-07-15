@@ -1,0 +1,23 @@
+
+<h1>Listing sites</h1>
+<p><u><b><%= link_to '+New site', new_site_path %></b></u></p>
+ 
+<!-- table class="reference" style="width:45%; border:5; cellpadding:4; cellspacing:3" -->
+<table id="customers">
+  <tr>
+    <th>Installation</th>
+    <th>Site</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @sites.each do |site| %>
+    <tr>
+      <td><%= site.installation_id %></td>
+      <td><%= site.name %></td>
+      <td><%= link_to 'Show', site_path(site) %></td>
+      <td><%= link_to 'Edit', edit_site_path(site) %></td>
+      <td><%= link_to 'Delete', site_path(site), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<hr/>

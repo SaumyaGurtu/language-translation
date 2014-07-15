@@ -1,0 +1,24 @@
+<%= form_for @site do |f| %>
+  <% if @site.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@site.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @site.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :Installation %><br>
+    <%= f.collection_select(:installation_id, Installation.all, :id, :installation) %>
+  </p>
+  <p>
+    <%= f.label :Site %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
