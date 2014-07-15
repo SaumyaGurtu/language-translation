@@ -1,0 +1,26 @@
+<h1>Listing installations</h1>
+<p><u><b><%= link_to '+New installation', new_installation_path %></b></u></p>
+
+<table id="customers">
+  <tr>
+     <th>Installation</th>
+     <th>Email Id</th>
+     <th>Address</th>
+     <th>Contact Number</th>
+    <th colspan="3"></th>
+  </tr>
+
+<% @installations.each do |installation| %>
+  <tr>
+     <td><%= installation.installation %></td>
+     <td><%= installation.email %></td>
+     <td><%= installation.address %></td>
+     <td><%= installation.contact %></td>
+      <td><%= link_to 'Show', installation_path(installation) %></td>
+      <td><%= link_to 'Edit', edit_installation_path(installation) %></td>
+      <td><%= link_to 'Delete', installation_path(installation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+
+</table>
+<hr/>

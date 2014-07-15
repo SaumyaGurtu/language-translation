@@ -1,0 +1,38 @@
+<h2>Sign Up Form</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :Username %><br />
+  <%= f.text_field :username %></div>
+
+  <div><%= f.label :First_Name %><br />
+  <%= f.text_field :first_name %></div>
+
+  <div><%= f.label :Last_Name %><br />
+  <%= f.text_field :last_name %></div>
+
+  <div><%= f.label :Role %><br />
+  <%= f.radio_button :role, 'Contributor', checked:true %> 
+  <%= label :role_contributor, 'Contributor' %>
+  <%= f.radio_button :role, 'Volunteer' %>
+  <%= label :role_volunteer, 'Volunteer' %>
+  <%= f.radio_button :role, 'Admin' %>
+  <%= label :role_admin, 'Admin' %>
+  </div>
+
+  <div><%= f.label :Password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :Password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.label :Can_you_login_with_the_registered_role_? %> &nbsp;
+  <%= f.radio_button :login_approval, 'Not Yet', checked:true %> 
+  <%= label :login_approval_not_yet, 'Not Yet' %>
+  </div>
+
+  <div><%= f.submit "Sign Up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
