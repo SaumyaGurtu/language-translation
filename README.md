@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Features:
 1. Upload picture of object.
 2. Add content (text-about the picture in English and category- like rivers,food,adjective,pronoun,etc. ) and language name to picture in English.
@@ -73,7 +72,4 @@ Aliasing actions (read = index and show) creates more concise and readable code.
 3. Do "rake db:migrate".
 4. Do "rails server" and open the link it asks you to in your web browser.
 5. Now use the application as you like :)
-=======
-language-translation
-====================
->>>>>>> f55846569a3ca39b79cb085804f9d186b140eef0
+
