@@ -21,7 +21,10 @@
 20. All sites under an installation can be seen under Installations tab. Click "Show" for a particular installation to see all contact information of installation and number of sites in it. 
 21. CAREFUL! : If a particular site is deleted, all the volunteer names under that site are automatically deleted.
 22. CAREFUL! : If a particular installation is deleted, all the sites under that installation are automatically deleted.
-18. Articles, Sites, Volunteers and Contributors table are sorted in descending order,i.e., last created is at the top and the first created is at the bottom.
+23. Articles, Sites, Volunteers and Contributors table are sorted in descending order,i.e., last created is at the top and the first created is at the bottom.
+24. Admin can view and edit the volunteer contact information - except for volunteer's username and password.
+25. Admin can enter the volunteer or contributor to use the application ,i.e., Login Approval = 'Not Yet' (before approval) to Login Approval = 'Yes'(after approval).
+25. Volunteer can enter the contributor to use the application ,i.e., Login Approval = 'Not Yet' (before approval) to Login Approval = 'Yes'(after approval).
 
 ## Using Devise 3.2.4
 1. For "Sign Up Form", username, first name, last name, password fields are compulsory. Username field is unique for each user. If the username you chose has already been chosen by someone, then you are asked to enter some other username.
@@ -32,7 +35,7 @@
 6. Delete my own account under "Edit Profile".
 
 ## Using CanCan
-1. Articles posted by any user is approved by volunteers. If the volunteer doesn't approve of the article, he/she may delete it.
+1. Articles posted by any user is approved by volunteers/admin. If the volunteer/admin doesn't approve of the article, he/she may delete it.
 2. Any user can edit a posted article.
 3. Approve the signed up contributers to log into the application.
 4. All permissions to admin.

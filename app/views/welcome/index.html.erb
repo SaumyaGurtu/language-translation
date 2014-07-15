@@ -1,0 +1,55 @@
+<% if user_signed_in? %>
+<!-- h3>Welcome  current_user.username !</h3> <br/ -->
+<p><u><b><%= link_to 'Edit profile', edit_user_registration_path %></b></u></p>
+<table id="customers">
+  <tr>
+    <th colspan="2"></th>
+  </tr>
+    <tr>
+<td><b>First Name:</b></td><td> <%= current_user.first_name %></td>
+    </tr>
+    <tr>
+<td><b>Last Name:</b></td><td><%= current_user.last_name %> </td>
+    </tr>
+    <tr>
+<td><b>Email id:</b>
+</td><td>
+<%= current_user.email %>
+</td>
+    </tr>
+    <tr>
+<td><b>Gender:</b>
+</td><td>
+<%= current_user.gender %> 
+</td>
+    </tr>
+    <tr>
+<td><b>Location:</b>
+</td><td>
+<%= current_user.location %>
+</td>
+    </tr>
+    <tr>
+<td><b>Contact Number:</b>
+</td><td>
+<%= current_user.contact %>
+</td>
+    </tr>
+    <tr>
+<td><b>Role:</b>
+</td><td>
+<%= current_user.role %> 
+</td>
+    </tr>
+    <tr>
+<td><b>Login Approval:</b>
+</td><td>
+<%= current_user.login_approval %>
+</td>
+    </tr>
+</table>
+<hr/>
+<% else %>
+<h3>Please login to use this application.</h3>
+<h3>If you are a new user the please sign up.</h3>
+<% end %>

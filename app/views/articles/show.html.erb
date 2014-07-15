@@ -1,0 +1,27 @@
+<h1>Saved article </h1>
+<p>
+  <strong>Language</strong>
+  <%= @article.language_id %>
+</p>
+<p>
+  <strong>Category</strong>
+  <%= @article.category %>
+</p>
+<p>
+  <strong>English Text:</strong>
+  <%= @article.english %>
+</p>
+ 
+<p>
+  <strong>Phonetic Text:</strong>
+  <%= @article.phonetic %>
+</p>
+ 
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@article.picture_url, :width => 400) if @article.picture.present? %>
+</p>
+
+<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %>
+<p><a href="#top">Return to Top</a></p>
