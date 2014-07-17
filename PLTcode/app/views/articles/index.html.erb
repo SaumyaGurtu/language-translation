@@ -15,7 +15,7 @@
  
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.language_id %></td>
+      <td><% if article.language.present? %><%= article.language.name %><% end %></td>
       <td><%= article.category %></td>
       <td><%= article.english %></td>
       <td><%= article.phonetic %></td>

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 # :controllers - to override the devise default - 
 #  - for admin to edit the user table records other than username or password without knowing the password.
   resources :users
-  resources :articles
   resources :installations do
     resources :sites
   end
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
   resources :languages do
     resources :articles
   end
+  resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

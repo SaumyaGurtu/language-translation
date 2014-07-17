@@ -1,10 +1,10 @@
 <h1>Saved article </h1>
 <p>
-  <strong>Language</strong>
-  <%= @article.language_id %>
+  <strong>Language:</strong>
+  <%= @article.language.name if @article.language.present? %>
 </p>
 <p>
-  <strong>Category</strong>
+  <strong>Category:</strong>
   <%= @article.category %>
 </p>
 <p>

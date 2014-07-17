@@ -7,7 +7,7 @@
 <h2>Articles</h2><ol>
 <% @language.articles.each do |article| %><li>
 <p>
-  <strong>Language:</strong>  <!-- remove this later because there is no need-->
+  <strong>Language:</strong>  <!-- remove this later because there is no need for it, just there for testing-->
   <% if article.language_id == @language.id %><%= @language.name %><% end %>
 </p>
 <p>
