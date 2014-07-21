@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :role, :login_approval, :first_name, :last_name
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable
-
 end

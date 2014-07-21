@@ -12,13 +12,9 @@
   <div><%= f.label :Last_Name %><br />
   <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :Expected_Role %><br />
-  <%= f.radio_button :role, 'Contributor', checked:true %> 
-  <%= label :role_contributor, 'Contributor' %>
-  <%= f.radio_button :role, 'Volunteer' %>
-  <%= label :role_volunteer, 'Volunteer' %>
-  <%= f.radio_button :role, 'Admin' %>
-  <%= label :role_admin, 'Admin' %>
+  <div><%= f.label :Role %><br />
+  <%= f.radio_button :role, 'Guest', checked:true %> 
+  <%= label :role, 'Guest' %>
   </div>
 
   <div><%= f.label :Password %><br />

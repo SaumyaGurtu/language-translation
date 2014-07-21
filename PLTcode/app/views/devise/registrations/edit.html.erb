@@ -12,16 +12,12 @@
   <div><%= f.label :Last_Name %><br />
   <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :Role %><br />
-  <%= f.radio_button :role, 'Contributor', checked:true %> 
-  <%= label :role_contributor, 'Contributor' %>
-  <%= f.radio_button :role, 'Volunteer' %>
-  <%= label :role_volunteer, 'Volunteer' %>
-  <%= f.radio_button :role, 'Admin' %>
-  <%= label :role_admin, 'Admin' %>
+  <div><%= f.label :Role %> ( cannot change ) &nbsp;
+  <%= f.radio_button :role, @user.role, checked:true %> 
+  <%= label :role, @user.role %>
   </div>
 
-  <div><%= f.label :Gender %><br />
+  <div><%= f.label :Gender %> <br/>
   <%= f.radio_button :gender, 'Male', checked:true %> 
   <%= label :gender_male, 'Male' %>
   <%= f.radio_button :gender, 'Female' %>
@@ -39,6 +35,10 @@
 
   <div><%= f.label :Contact_Number %><br />
   <%= f.text_field :contact %></div>
+
+  <div><%= f.label :Login_Approval %> ( cannot change ) &nbsp;
+  <%= f.radio_button :login_approval, @user.login_approval, checked:true %> 
+  <%= label :login_approval, @user.login_approval %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

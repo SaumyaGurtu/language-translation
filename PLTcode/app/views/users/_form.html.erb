@@ -43,12 +43,12 @@
 
   <p>
     <%= f.label :Role %><br/>
-    <%= f.text_field :role %>
+    <%= f.select :role, options_for_select([[@user.role, @user.role], ['Contributor' ,'Contributor'], ['Volunteer', 'Volunteer']]) %>
   </p>
 
   <p>
     <%= f.label :Login_Approval %><br/>
-    <%= f.text_field :login_approval %>
+    <%= f.select :login_approval, options_for_select([[@user.login_approval, @user.login_approval], ['Yes' ,'Yes'], ['Not Yet', 'Not Yet']]) %>
   </p>
 
   <p>
