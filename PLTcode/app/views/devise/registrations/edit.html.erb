@@ -31,9 +31,8 @@
   <div><%= f.label :Email_id %><br />
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :Location %>
-  <i> ( Please select the correct location name, don't leave this field blank. )</i><br />
-    <%= f.select :location, options_for_select([['' ,''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
+  <div><%= f.label :Location %> <br/>
+    <%= f.select :location, options_for_select([[@user.location, @user.location], ['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
 		    ['Albania' ,'Albania'],]) %>
     <!-- add the names of installations in the list here -->
   </div>
