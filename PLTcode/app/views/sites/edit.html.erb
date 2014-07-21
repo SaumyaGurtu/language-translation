@@ -1,5 +1,10 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
 <h1>Editing site</h1>
  
 <%= render 'form' %>
  
 <%= link_to 'Back', sites_path %>
+<% end %>
+<% end %>

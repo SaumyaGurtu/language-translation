@@ -1,5 +1,10 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
 <h1>New article</h1>
  
 <%= render 'form' %>
  
 <%= link_to 'Back', articles_path %>
+<% end %>
+<% end %>

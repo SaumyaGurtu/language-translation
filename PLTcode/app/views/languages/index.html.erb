@@ -1,18 +1,31 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
 <h1>Listing Languages</h1>
+<% if current_user.role == 'Admin' %>
 <p><u><b><%= link_to '+New language', new_language_path %></b></u></p>
+<% end %>
  
 <table id="customers">
   <tr>
     <th>Name</th>
+<% if current_user.role == 'Admin' %>
     <th colspan="3"></th>
+<% else %>
+    <th colspan="1"></th>
+<% end %>
   </tr>
   <% @languages.each do |language| %>
     <tr>
       <td><%= language.name %></td>
       <td><%= link_to 'Articles', language_path(language) %></td>
+<% if current_user.role == 'Admin' %>
       <td><%= link_to 'Edit', edit_language_path(language) %></td>
       <td><%= link_to 'Delete', language_path(language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
     </tr>
   <% end %>
 </table>
 <hr/>
+  <% end %>
+  <% end %>

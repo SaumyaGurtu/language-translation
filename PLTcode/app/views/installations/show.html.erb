@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
 <h1>Saved installation contact information</h1>
 <p>
   <strong>Installation:</strong>
@@ -27,3 +30,5 @@
 
 <%= link_to 'Back', installations_path %>
 <%= link_to 'Edit', edit_installation_path(@installation) %>
+<% end %>
+<% end %>

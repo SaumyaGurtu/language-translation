@@ -1,13 +1,21 @@
 
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
 <h1>Listing sites</h1>
+<% if current_user.role == 'Admin' %>
 <p><u><b><%= link_to '+New site', new_site_path %></b></u></p>
+<% end %>
  
 <!-- table class="reference" style="width:45%; border:5; cellpadding:4; cellspacing:3" -->
 <table id="customers">
   <tr>
     <th>Installation</th>
     <th>Site</th>
+<% if current_user.role == 'Admin' %>
     <th colspan="3"></th>
+<% else %>
+    <th colspan="2"></th>
+<% end %>
   </tr>
  
   <% @sites.each do |site| %>
@@ -16,8 +24,12 @@
       <td><%= site.name %></td>
       <td><%= link_to 'Show', site_path(site) %></td>
       <td><%= link_to 'Edit', edit_site_path(site) %></td>
+<% if current_user.role == 'Admin' %>
       <td><%= link_to 'Delete', site_path(site), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
     </tr>
   <% end %>
 </table>
 <hr/>
+<% end %>
+<% end %>

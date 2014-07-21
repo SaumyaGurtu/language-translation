@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
 <%= form_for @installation do |f| %>
   <% if @installation.errors.any? %>
     <div id="error_explanation">
@@ -32,4 +35,6 @@
   <p>
     <%= f.submit %>
   </p>
+<% end %>
+<% end %>
 <% end %>

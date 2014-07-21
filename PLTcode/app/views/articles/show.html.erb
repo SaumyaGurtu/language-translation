@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
 <h1>Saved article </h1>
 <p>
   <strong>Language:</strong>
@@ -24,4 +27,5 @@
 
 <%= link_to 'Back', articles_path %>
 <%= link_to 'Edit', edit_article_path(@article) %>
-<p><a href="#top">Return to Top</a></p>
+<% end %>
+<% end %>

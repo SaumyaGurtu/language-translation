@@ -1,6 +1,10 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
 <h1>New installation contact information</h1>
  
 <%= render 'form' %>
  
 <%= link_to 'Back', installations_path %>
-<p><a href="#top">Return to Top</a></p>
+<% end %>
+<% end %>

@@ -1,3 +1,5 @@
+<% if current_user.login_approval == 'Yes' %>
+
 <% if current_user.role == 'Admin' %>
 
 <!--- Volunteers table for admin-->
@@ -71,6 +73,8 @@
       <td><%= user.role %></td>
       <td><%= user.login_approval %></td>
       <td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   <% end %>
@@ -119,5 +123,7 @@
   <% end %>
 </table>
 <hr/>
+
+<% end %>
 
 <% end %>

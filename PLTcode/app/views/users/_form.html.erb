@@ -1,3 +1,7 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
+
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -54,4 +58,7 @@
   <p>
     <%= f.submit %>
   </p>
+<% end %>
+
+<% end %>
 <% end %>

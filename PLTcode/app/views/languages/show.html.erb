@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
 <h1>Saved language </h1>
 <p>
   <strong>Name:</strong>
@@ -29,4 +32,5 @@
 <% end %></ol>
 
 <%= link_to 'Back', languages_path %>
-<p><a href="#top">Return to Top</a></p>
+<% end %>
+<% end %>

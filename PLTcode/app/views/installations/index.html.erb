@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
 <h1>Listing installations</h1>
 <p><u><b><%= link_to '+New installation', new_installation_path %></b></u></p>
 
@@ -24,3 +27,5 @@
 
 </table>
 <hr/>
+<% end %>
+<% end %>

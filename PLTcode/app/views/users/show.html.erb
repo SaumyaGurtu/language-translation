@@ -1,4 +1,8 @@
-<h1>Saved Volunteer Contact Information </h1>
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
+
+<h1>Saved User Contact Information </h1>
 <p>
   <strong>First Name:</strong>
       <%= @user.first_name %>
@@ -44,3 +48,5 @@
  
 <%= link_to 'Back', users_path %>
 <%= link_to 'Edit', edit_user_path(@user) %>
+
+<% end %>

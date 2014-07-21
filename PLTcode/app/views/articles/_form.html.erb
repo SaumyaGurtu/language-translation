@@ -1,3 +1,7 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
+
 <%= form_for @article do |f| %>
   <% if @article.errors.any? %>
   <div id="error_explanation">
@@ -39,4 +43,8 @@
   <p>
     <%= f.submit %>
   </p>
+<% end %>
+
+
+<% end %>
 <% end %>

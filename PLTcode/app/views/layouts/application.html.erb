@@ -22,20 +22,31 @@
 </div>
 <div class="collapse navbar-collapse">
 <% if user_signed_in? %>
-<!-- if current_user.login_approval == 'Not Yet'
- else -->
+<% if current_user.login_approval == 'Yes' %>
 <ul class="nav navbar-nav">
+
+<% if current_user.role == 'Admin' %>
+<li class="active"><a href="/users">Users</a></li>
 <li class="active"><a href="/installations">Installations</a></li>
 <li class="active"><a href="/sites">Sites</a></li>
 <li class="active"><a href="/languages">Languages</a></li>
 <li class="active"><a href="/articles">Articles</a></li>
-<% if current_user.role == 'Admin' %>
-<li class="active"><a href="/users">Users</a></li>
-<% elsif current_user.role == 'Volunteer' %>
-<li class="active"><a href="/users">Contributors</a></li>
 <% end %>
+
+<% if current_user.role == 'Volunteer' %>
+<li class="active"><a href="/users">Contributors</a></li>
+<li class="active"><a href="/sites">Sites</a></li>
+<li class="active"><a href="/languages">Languages</a></li>
+<li class="active"><a href="/articles">Articles</a></li>
+<% end %>
+
+<% if current_user.role == 'Contributor' %>
+<li class="active"><a href="/languages">Languages</a></li>
+<li class="active"><a href="/articles">Articles</a></li>
+<% end %>
+
 </ul>
-<!-- end -->
+<% end %>
 <p class="navbar-text pull-right">
 Logged in as <strong><%= current_user.username %></strong>. &nbsp;
 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |

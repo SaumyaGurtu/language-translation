@@ -1,3 +1,6 @@
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
 <h1>Saved site information</h1>
 <p>
   <strong>Installation:</strong>
@@ -10,10 +13,14 @@
 <p><strong>Volunteers:</strong><ol>
 <% @site.volunteers.each do |volunteer| %>
   <li>
-          <%= volunteer.vname %>&nbsp;<%= link_to 'Delete', [volunteer.site, volunteer], method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= volunteer.vname %>&nbsp;
+<% if current_user.role == 'Admin' %>
+	  <%= link_to 'Delete', [volunteer.site, volunteer], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
   </li>	     
 <% end %></ol></p>
 
+<% if current_user.role == 'Admin' %>
 <h2>Add a volunteer name:</h2>
 <%= form_for([@site, @site.volunteers.build]) do |f| %>
   <% if @site.volunteers.build.errors.any? %>
@@ -26,6 +33,8 @@
 	<%= f.submit %>
    </p>
 <% end %>
+<% end %>
+
 <p><strong>Contributors:</strong><ol>
 <% @site.contributors.each do |contributor| %>
   <li>
@@ -47,3 +56,5 @@
 <% end %>
 <%= link_to 'Back', sites_path %>
 <%= link_to 'Edit', edit_site_path(@site) %>
+<% end %>
+<% end %>

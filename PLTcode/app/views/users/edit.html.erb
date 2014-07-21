@@ -1,5 +1,12 @@
-<h1>Editing Volunteer Contact Information</h1>
+
+<% if current_user.login_approval == 'Yes' %>
+<% if current_user.role == 'Admin' %>
+
+<h1>Editing User Contact Information</h1>
  
 <%= render 'form' %>
  
 <%= link_to 'Back', users_path %>
+
+<% end %>
+<% end %>
