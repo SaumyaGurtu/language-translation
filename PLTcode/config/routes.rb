@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :sites do
     resources :volunteers
+    resources :contributors
   end
   resources :languages do
     resources :articles

@@ -12,7 +12,7 @@
   <div><%= f.label :Last_Name %><br />
   <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :Role %><br />
+  <div><%= f.label :Expected_Role %><br />
   <%= f.radio_button :role, 'Contributor', checked:true %> 
   <%= label :role_contributor, 'Contributor' %>
   <%= f.radio_button :role, 'Volunteer' %>
@@ -30,6 +30,11 @@
   <div><%= f.label :Can_you_login_with_the_registered_role_? %> &nbsp;
   <%= f.radio_button :login_approval, 'Not Yet', checked:true %> 
   <%= label :login_approval_not_yet, 'Not Yet' %>
+  </div>
+
+  <div>
+    <%= f.label :Current_Role %><br>
+    <%= f.collection_select(:role_id, Role.all, :id, :name) %>
   </div>
 
   <div><%= f.submit "Sign Up" %></div>

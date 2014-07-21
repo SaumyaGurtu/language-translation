@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629191348) do
+ActiveRecord::Schema.define(version: 20140721121316) do
 
   create_table "articles", force: true do |t|
     t.text     "english"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20140629191348) do
   end
 
   add_index "articles", ["language_id"], name: "index_articles_on_language_id"
+
+  create_table "contributors", force: true do |t|
+    t.string   "name"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contributors", ["site_id"], name: "index_contributors_on_site_id"
 
   create_table "installations", force: true do |t|
     t.string   "installation"
