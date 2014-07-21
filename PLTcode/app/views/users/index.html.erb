@@ -2,9 +2,52 @@
 
 <% if current_user.role == 'Admin' %>
 
+<!--- Guests table for admin-->
+<h1><a id='G'>Listing Guests for login approval with a role</a></h1>
+<a href='#C'>Jump to list of Contributors</a>
+<br/>
+<a href='#V'>Jump to list of Volunteers</a>
+ 
+<table id="customers">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Location</th>
+    <th>Contact Number</th>
+    <th>Role</th>
+    <th>Login Approval</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+  <% if user.role == 'Guest' %>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.username %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.email %></td>
+      <td><%= user.location %></td>
+      <td><%= user.contact %></td>
+      <td><%= user.role %></td>
+      <td><%= user.login_approval %></td>
+      <td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  <% end %>
+</table>
+<hr/>
+
 <!--- Volunteers table for admin-->
 <h1><a id='V'>Listing Volunteers</a></h1>
 <a href='#C'>Jump to list of Contributors</a>
+<br/>
+<a href='#G'>Jump to list of Guests</a>
  
 <table id="customers">
   <tr>
@@ -45,6 +88,8 @@
 <!--  link_to 'Refuse', edit_user_path(user) if permitted_to? :update, user -->
 <h1><a id='C'>Listing Contributors</a></h1>
 <a href='#V'>Jump to list of Volunteers</a>
+<br/>
+<a href='#G'>Jump to list of Guests</a>
  
 <table id="customers">
   <tr>

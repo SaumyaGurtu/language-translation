@@ -24,6 +24,16 @@
   </p>
  
   <p>
+    <%= f.label :Role %><br/>
+    <%= f.select :role, options_for_select([[@user.role, @user.role], ['Contributor' ,'Contributor'], ['Volunteer', 'Volunteer']]) %>
+  </p>
+
+  <p>
+    <%= f.label :Login_Approval %><br/>
+    <%= f.select :login_approval, options_for_select([[@user.login_approval, @user.login_approval], ['Yes' ,'Yes'], ['Not Yet', 'Not Yet']]) %>
+  </p>
+
+  <p>
     <%= f.label :Email %><br/>
     <%= f.text_field :email %>
   </p>
@@ -43,16 +53,6 @@
   <p>
     <%= f.label :Gender %><br/>
     <%= f.text_field :gender %>
-  </p>
-
-  <p>
-    <%= f.label :Role %><br/>
-    <%= f.select :role, options_for_select([[@user.role, @user.role], ['Contributor' ,'Contributor'], ['Volunteer', 'Volunteer']]) %>
-  </p>
-
-  <p>
-    <%= f.label :Login_Approval %><br/>
-    <%= f.select :login_approval, options_for_select([[@user.login_approval, @user.login_approval], ['Yes' ,'Yes'], ['Not Yet', 'Not Yet']]) %>
   </p>
 
   <p>
