@@ -1,4 +1,6 @@
 class VolunteersController < ApplicationController
+  load_and_authorize_resource
+
   def create
      @site = Site.find(params[:site_id])
      @volunteer = @site.volunteers.create(volunteer_params)

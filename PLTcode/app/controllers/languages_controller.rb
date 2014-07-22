@@ -1,4 +1,6 @@
 class LanguagesController < ApplicationController
+ load_and_authorize_resource
+
  def new
    @language = Language.new
  end

@@ -1,4 +1,6 @@
 class InstallationsController < ApplicationController
+ load_and_authorize_resource
+
  def new
    @installation = Installation.new
  end

@@ -1,4 +1,6 @@
 class ContributorsController < ApplicationController
+  load_and_authorize_resource
+
   def create
      @site = Site.find(params[:site_id])
      @contributor = @site.contributors.create(contributor_params)
