@@ -15,6 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
+$(function() {
+		  if ($("#articles").length > 0) {
+		      setTimeout(updateArticles, 10000);
+		  }
+});
+
+function updateArticles () {
+	  if ($(".article").length > 0) {
+
+		        var article_id = $(".article:first").attr("data-id");
+		        var after = $(".article:first").attr("data-time");
+	  } else {
+		        var after = "0";
+	  }
+          $.getScript('/articles.js?article_id=' + article_id + "&after=" + after ); 
+          setTimeout(updateArticles, 10000);
+}
+
+
+
 /* bootstrap.js */
 
 

@@ -1,0 +1,13 @@
+<tr>
+<div class="article" data-id="<%= article.id %>" data-time="<%= article.created_at.to_i %>">
+<td><% if article.language.present? %><%= article.language.name %><% end %></td>
+<td><%= article.category %></td>
+<td><%= article.english %></td>
+<td><%= article.phonetic %></td>
+<td><% if article.picture.present? %>Uploaded<% end %></td>
+<td><%= link_to 'Show', article_path(article) %></td>
+<td><%= link_to 'Edit', edit_article_path(article) %></td>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
+<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+</tr>
