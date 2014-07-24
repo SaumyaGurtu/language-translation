@@ -1,1 +1,3 @@
-$("#articles").append("<%= render(@articles) %>");
+<% unless @articles.empty? %>
+$("#articles").append("<%= raw escape_javascript(render(:partial => 'article', collection: @articles)) %>");
+<% end %>

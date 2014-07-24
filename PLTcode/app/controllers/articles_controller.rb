@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
   @article = Article.new
  end
 
+ def index
+   @articles = Article.where("id > ? and created_at > ?", params[:article_id].to_i, Time.at(params[:after].to_i ) + 1 )
+ end
+
  def create
   @article = Article.new(article_params)
  
@@ -44,5 +48,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:category, :english, :phonetic, :picture, :language_id)
   end
-
 end

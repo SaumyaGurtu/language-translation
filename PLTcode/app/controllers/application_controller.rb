@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
       redirect_to root_url, :alert => exception.message
   end
+
   before_action :authenticate_user!
 # if user is not logged in, then page will be redirected to login page
 
@@ -29,9 +30,12 @@ class ApplicationController < ActionController::Base
          devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(registration_params) }
      end
   end
+
 end
 
 # customising devise generated tables.
 
 # flash messages/errors are present in config/locals/devise.en.yml
 # authentification criteria, password length, etc. is present in config/initialisers/devise.rb
+
+

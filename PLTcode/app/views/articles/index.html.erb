@@ -19,9 +19,9 @@
   </tr>
  
     <div id="articles">
-    <%= render @articles %>
+        <%= render :partial => 'article', collection: @articles %>
     </div>
 </table>
 <hr/>
-  <% end %>
-  <% end %>
+<% end %>
+<% end %>

@@ -21,15 +21,15 @@ $(function() {
 		  }
 });
 
-function updateArticles () {
+function updateArticles (data) {
 	  if ($(".article").length > 0) {
-
 		        var article_id = $(".article:first").attr("data-id");
 		        var after = $(".article:first").attr("data-time");
+	                var len = $(".article").length
 	  } else {
 		        var after = "0";
 	  }
-          $.getScript('/articles.js?article_id=' + article_id + "&after=" + after ); 
+          $.getScript('/articles.js?article_id=' + article_id + "&after=" + after + "&len=" + len ); 
           setTimeout(updateArticles, 10000);
 }
 
