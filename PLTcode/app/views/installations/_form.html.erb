@@ -4,7 +4,7 @@
 <%= form_for @installation do |f| %>
   <% if @installation.errors.any? %>
     <div id="error_explanation">
-        <h2><%= pluralize(@installation.errors.count, "error") %> prohibited this installation contact information from being saved:</h2>
+        <h2><%= pluralize(@installation.errors.count, "error") %> prohibited this post contact information from being saved:</h2>
 	     <ul>
 		 <% @installation.errors.full_messages.each do |msg| %>
 		        <li><%= msg %></li>
@@ -13,7 +13,7 @@
      </div>
    <% end %>
   <p>
-    <%= f.label :Installation %><br>
+    <%= f.label :Post %><br>
     <%= f.text_field :installation %>
   </p>
 

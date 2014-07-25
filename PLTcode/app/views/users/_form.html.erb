@@ -24,12 +24,12 @@
   </p>
  
   <p>
-    <%= f.label :Role %><br/>
+    <%= f.label :Role %>
     <%= f.select :role, options_for_select([[@user.role, @user.role], ['Contributor' ,'Contributor'], ['Volunteer', 'Volunteer']]) %>
   </p>
 
   <p>
-    <%= f.label :Login_Approval %><br/>
+    <%= f.label :Login_Approval %>
     <%= f.select :login_approval, options_for_select([[@user.login_approval, @user.login_approval], ['Yes' ,'Yes'], ['Not Yet', 'Not Yet']]) %>
   </p>
 
@@ -39,10 +39,16 @@
   </p>
 
   <p>
-    <%= f.label :Location %>: 
+    <%= f.label :Location %> 
     <%= f.select :location, options_for_select([[@user.location, @user.location], ['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
 		    ['Albania' ,'Albania'],]) %>
     <!-- add the names of installations in the list here -->
+  </p>
+
+  <p><%= f.label :Language_Contribution %> 
+    <%= f.select :language_contribution, options_for_select([[@user.language_contribution, @user.language_contribution], ['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
+		    ['Welsh' ,'Welsh'],]) %>
+    <!-- add the names of languages in the list here manually-->
   </p>
 
   <p>
@@ -51,8 +57,8 @@
   </p>
 
   <p>
-    <%= f.label :Gender %><br/>
-    <%= f.text_field :gender %>
+    <%= f.label :Gender %>
+    <%= f.select :gender, options_for_select([[@user.gender, @user.gender], ['Male', 'Male'], ['Female' ,'Female'],]) %>
   </p>
 
   <p>

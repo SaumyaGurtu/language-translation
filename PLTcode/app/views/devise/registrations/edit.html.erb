@@ -30,7 +30,13 @@
   <div><%= f.label :Location %> <br/>
     <%= f.select :location, options_for_select([[@user.location, @user.location], ['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
 		    ['Albania' ,'Albania'],]) %>
-    <!-- add the names of installations in the list here -->
+    <!-- add the names of installations/posts in the list here manually-->
+  </div>
+
+  <div><%= f.label :Language_Contribution %> <br/>
+    <%= f.select :language_contribution, options_for_select([[@user.language_contribution, @user.language_contribution], ['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
+		    ['Welsh' ,'Welsh'],]) %>
+    <!-- add the names of languages in the list here manually-->
   </div>
 
   <div><%= f.label :Contact_Number %><br />

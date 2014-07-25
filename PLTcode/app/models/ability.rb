@@ -8,12 +8,11 @@ class Ability
 	if user.role == 'Admin'
 	   can :manage, :all
 	elsif user.role == 'Volunteer'
-	   can :read, Article
 	   can [:read, :update], Site
 	   can :read, [Language, User]
+	   can :manage, [Contributor, Article]
 	elsif user.role == 'Contributor'
 	   can [:read, :create, :update], Article
-	   can :read, Language
 	end
     #
     # The first argument to `can` is the action you are giving the user 

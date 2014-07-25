@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  if Rails.env.production?
+     offline = Rack::Offline.configure :cache_interval => 120 do      
+        cache ActionController::Base.helpers.asset_path("application.css")
+        cache ActionController::Base.helpers.asset_path("application.js")
+        # cache other assets
+        network "/"  
+     end
+  end
   devise_for :users,  :path_prefix => 'plt', :controllers => { :registrations => "registrations" }
 # :path_prefix - to customise routes
 # :controllers - to override the devise default - 

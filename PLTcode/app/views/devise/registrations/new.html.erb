@@ -17,6 +17,12 @@
   <%= label :role_guest, 'Guest' %>
   </div>
 
+  <div><%= f.label :Language_Contribution %> <br/>
+    <%= f.select :language_contribution, options_for_select([['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
+		    ['Welsh' ,'Welsh'],]) %>
+    <!-- add the names of languages in the list here manually-->
+  </div>
+
   <div><%= f.label :Password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 

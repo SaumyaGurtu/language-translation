@@ -1,12 +1,12 @@
 
 <% if current_user.login_approval == 'Yes' %>
 <% if current_user.role == 'Admin' %>
-<h1>Listing installations</h1>
-<p><u><b><%= link_to '+New installation', new_installation_path %></b></u></p>
+<h1>Listing posts</h1>
+<p><u><b><%= link_to '+New post', new_installation_path %></b></u></p>
 
 <table id="customers">
   <tr>
-     <th>Installation</th>
+     <th>Post</th>
      <th>Email Id</th>
      <th>Address</th>
      <th>Contact Number</th>

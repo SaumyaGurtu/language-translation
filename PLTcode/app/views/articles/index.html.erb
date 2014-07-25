@@ -1,6 +1,7 @@
 
 <% if current_user.login_approval == 'Yes' %>
-<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
+
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
 <h1>Listing articles</h1>
 <p><u><b><%= link_to '+New article', new_article_path %></b></u></p>
  
@@ -11,11 +12,7 @@
     <th>English Text</th>
     <th>Phonetic Text</th>
     <th>Picture</th>
-<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
     <th colspan="3"></th>
-<% else %>
-    <th colspan="2"></th>
-<% end %>
   </tr>
  
     <div id="articles">
@@ -24,4 +21,46 @@
 </table>
 <hr/>
 <% end %>
+
+<% if current_user.role == 'Contributor' %>
+<% if current_user.language_contribution == 'All' %> <!-- do nothing as 1 contributor can contribute to 1 language only -->
+<% else %>
+<h1>Listing photos for <%= current_user.language_contribution %> language</h1>
+<p><u><b><%= link_to '+New article', new_article_path %></b></u></p>
+ 
+<ol>
+<% @articles.each do |article| %>
+<% if article.language.present? %>
+<% if article.language.name == current_user.language_contribution %>
+<li>
+<p>
+  <strong>Language:</strong>  <!-- remove this later because there is no need for it, just there for testing-->
+  <%= article.language.name if article.language.present? %>
+</p>
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(article.picture_url, :width => 400) if article.picture.present? %>
+</p>
+<p>
+  <strong>Phonetic Text:</strong>
+  <%= article.phonetic %>
+</p>
+<p>
+  <strong>English Text:</strong>
+  <%= article.english %>
+</p> 
+<p>
+  <strong>Category:</strong>
+  <%= article.category %>
+</p>
+<p><%= link_to 'Show', article_path(article) %> &nbsp;&nbsp;
+<%= link_to 'Edit', edit_article_path(article) %></p>
+<hr/>
+<% end %>
+<% end %>
+<% end %>
+</ol>
+<% end %>
+<% end %>
+
 <% end %>
