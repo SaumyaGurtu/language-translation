@@ -16,7 +16,11 @@
   <% end %>
   <p>
     <%= f.label :Language %><br>
+<% if current_user.role == 'Admin' or current_user.role == 'Volunteer' %>
     <%= f.collection_select(:language_id, Language.all, :id, :name, :include_blank => "None of below") %>
+<% elsif current_user.role == 'Contributor' %>
+    <%= f.collection_select(:language_id, Language.where("name = ?", current_user.language_contribution), :id, :name) %>
+<% end %>
   </p>
   <p>
     <%= f.label :Category %><br>
