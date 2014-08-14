@@ -18,9 +18,7 @@
   </div>
 
   <div><%= f.label :Language_Contribution %> <br/>
-    <%= f.select :language_contribution, options_for_select([['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
-		    ['Welsh' ,'Welsh'],]) %>
-    <!-- add the names of languages in the list here manually-->
+    <%= f.collection_select(:lang, Language.all, :name, :name, :include_blank => "All") %>
   </div>
 
   <div><%= f.label :Password %><br />

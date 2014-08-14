@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725193821) do
+ActiveRecord::Schema.define(version: 20140814042324) do
 
   create_table "articles", force: true do |t|
     t.text     "english"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20140725193821) do
     t.string   "gender"
     t.string   "role"
     t.string   "login_approval"
-    t.string   "language_contribution"
+    t.string   "lang"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -1,0 +1,16 @@
+Rails.application.config.assets.precompile += %w( articles.css )
+Rails.application.config.assets.precompile += %w( contributors.css )
+Rails.application.config.assets.precompile += %w( languages.css )
+Rails.application.config.assets.precompile += %w( sites.css )
+Rails.application.config.assets.precompile += %w( installations.css )
+Rails.application.config.assets.precompile += %w( volunteers.css )
+Rails.application.config.assets.precompile += %w( welcome.css )
+
+
+Rails.application.config.assets.precompile += %w( articles.js )
+Rails.application.config.assets.precompile += %w( contributors.js )
+Rails.application.config.assets.precompile += %w( languages.js )
+Rails.application.config.assets.precompile += %w( sites.js )
+Rails.application.config.assets.precompile += %w( installations.js )
+Rails.application.config.assets.precompile += %w( volunteers.js )
+Rails.application.config.assets.precompile += %w( welcome.js )

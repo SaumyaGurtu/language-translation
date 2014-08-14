@@ -1,0 +1,44 @@
+
+  if Rails.env.production?
+     offline = Rack::Offline.configure :cache_interval => 120 do      
+        cache ActionController::Base.helpers.asset_path("application.css")
+        cache ActionController::Base.helpers.asset_path("application.js")
+        # cache other assets
+        network "/"  
+     end
+  end
+
+
+     Rack::Offline.configure :cache_interval => 120 do      
+        cache "images/2wwH5x2.gif"
+
+        cache ActionController::Base.helpers.asset_path("application.css")
+        cache ActionController::Base.helpers.asset_path("articles.css.scss")
+        cache ActionController::Base.helpers.asset_path("contributors.css.scss")
+        cache ActionController::Base.helpers.asset_path("installations.css.scss")
+        cache ActionController::Base.helpers.asset_path("languages.css.scss")
+        cache ActionController::Base.helpers.asset_path("sites.css.scss")
+        cache ActionController::Base.helpers.asset_path("volunteers.css.scss")
+        cache ActionController::Base.helpers.asset_path("welcome.css.scss")
+
+        cache ActionController::Base.helpers.asset_path("application.js")
+        cache ActionController::Base.helpers.asset_path("articles.js.coffee")
+        cache ActionController::Base.helpers.asset_path("contributors.js.coffee")
+        cache ActionController::Base.helpers.asset_path("installations.js.coffee")
+        cache ActionController::Base.helpers.asset_path("languages.js.coffee")
+        cache ActionController::Base.helpers.asset_path("sites.js.coffee")
+        cache ActionController::Base.helpers.asset_path("volunteers.js.coffee")
+        cache ActionController::Base.helpers.asset_path("welcome.js.coffee")
+        # cache other assets
+        network "/"  
+     end
+     get "/application.manifest" => Rack::Offline
+
+
+        cache "stylesheets/articles.css.scss"
+        cache "stylesheets/contributors.css.scss"
+        cache "stylesheets/installations.css.scss"
+        cache "stylesheets/languages.css.scss"
+        cache "stylesheets/sites.css.scss"
+        cache "stylesheets/volunteers.css.scss"
+        cache "stylesheets/welcome.css.scss"

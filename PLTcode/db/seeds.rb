@@ -8,7 +8,7 @@
 
 # must be taken care of at the time of production.
 
-   users = User.create([{ username: 'Chicago' , first_name: 'Chicago', last_name: 'Go', role: 'Admin', login_approval: 'Yes', 
-		   password: 'password', password_confirmation: 'password', email: 'saumyagurtu@gmail.com'}])
-   users = User.create([{ username: 'Chicago1' , first_name: 'Chicago1', last_name: 'Go1', role: 'Admin', login_approval: 'Yes', 
-		   password: 'password1', password_confirmation: 'password1', email: 'saumya.gurtu@students.iiit.ac.in'}])
+   users = User.create([{ username: 'Admin1' , first_name: 'Adam', last_name: 'Wilkins', role: 'Admin', login_approval: 'Yes', 
+		   password: 'admin1', password_confirmation: 'admin1', email: 'saumyagurtu@gmail.com'}])
+   users = User.create([{ username: 'Admin2' , first_name: 'Neil', last_name: 'Bohr', role: 'Admin', login_approval: 'Yes', 
+		   password: 'admin2', password_confirmation: 'admin2', email: 'saumya.gurtu@students.iiit.ac.in'}])

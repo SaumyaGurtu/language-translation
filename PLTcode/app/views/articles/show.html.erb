@@ -1,7 +1,7 @@
 
 <% if current_user.login_approval == 'Yes' %>
 <% if current_user.role == 'Admin' or current_user.role == 'Volunteer' or current_user.role == 'Contributor' %>
-<h1>Saved article </h1>
+<h1>Saved photo </h1>
 <p>
   <strong>Language:</strong>
   <%= @article.language.name if @article.language.present? %>

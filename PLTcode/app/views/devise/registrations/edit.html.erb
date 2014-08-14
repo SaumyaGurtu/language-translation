@@ -1,3 +1,4 @@
+
 <h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put }) do |f| %>
@@ -28,15 +29,11 @@
   <%= f.email_field :email %></div>
 
   <div><%= f.label :Location %> <br/>
-    <%= f.select :location, options_for_select([[@user.location, @user.location], ['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
-		    ['Albania' ,'Albania'],]) %>
-    <!-- add the names of installations/posts in the list here manually-->
+    <%= f.collection_select(:location, Installation.all, :installation, :installation, :include_blank => "None") %>
   </div>
 
   <div><%= f.label :Language_Contribution %> <br/>
-    <%= f.select :language_contribution, options_for_select([[@user.language_contribution, @user.language_contribution], ['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
-		    ['Welsh' ,'Welsh'],]) %>
-    <!-- add the names of languages in the list here manually-->
+    <%= f.collection_select(:lang, Language.all, :name, :name, :include_blank => "All") %>
   </div>
 
   <div><%= f.label :Contact_Number %><br />

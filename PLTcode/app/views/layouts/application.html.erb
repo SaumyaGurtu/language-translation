@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="/application.manifest">
+<html>
 <head>
   <title>Peace Corps</title>
   <%= stylesheet_link_tag    'application' %>
@@ -12,12 +12,7 @@
 <%= render "shared/header" %>
 <div class="container">
 <div class="navbar-header">
-<!-- button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button -->
+
 <a class="navbar-brand" href="/">You</a>
 </div>
 <div class="collapse navbar-collapse">
@@ -30,19 +25,18 @@
 <li class="active"><a href="/installations">Posts</a></li>
 <li class="active"><a href="/sites">Sites</a></li>
 <li class="active"><a href="/languages">Languages</a></li>
-<li class="active"><a href="/articles">Articles</a></li>
+<li class="active"><a href="/articles">Photos</a></li>
 <% end %>
 
 <% if current_user.role == 'Volunteer' %>
 <li class="active"><a href="/users">Contributors</a></li>
 <li class="active"><a href="/sites">Sites</a></li>
 <li class="active"><a href="/languages">Languages</a></li>
-<li class="active"><a href="/articles">Articles</a></li>
+<li class="active"><a href="/articles">Photos</a></li>
 <% end %>
 
 <% if current_user.role == 'Contributor' %>
-<!--li class="active"><a href="/languages">Languages</a></li -->
-<li class="active"><a href="/articles">Articles</a></li>
+<li class="active"><a href="/articles">Photos</a></li>
 <% end %>
 
 </ul>
@@ -69,7 +63,9 @@ Logged in as <strong><%= current_user.role %></strong>. &nbsp;
  <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
  <% end %>
+
   <%= yield %>
+
 </div>
 
 
