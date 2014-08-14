@@ -23,18 +23,18 @@
 <% end %>
 
 <% if current_user.role == 'Contributor' %>
-<% if current_user.language_contribution == 'All' %> <!-- do nothing as 1 contributor can contribute to 1 language only -->
+<% if current_user.lang == nil %> <!-- do nothing as 1 contributor can contribute to 1 language only -->
 <% else %>
-<h1>Listing photos for <%= current_user.language_contribution %> language</h1>
+<h1>Listing photos for <%= current_user.lang %> language</h1>
 <p><u><b><%= link_to '+New photo', new_article_path %></b></u></p>
  
 <ol>
 <% @articles.each do |article| %>
 <% if article.language.present? %>
-<% if article.language.name == current_user.language_contribution %>
+<% if article.language.name == current_user.lang %>
 <li>
 <p>
-  <strong>Language:</strong>  <!-- remove this later because there is no need for it, just there for testing-->
+  <strong>Language:</strong>  <!-- remove this later because there is no need for it, just there for testing -->
   <%= article.language.name if article.language.present? %>
 </p>
 <p>

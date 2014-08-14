@@ -40,15 +40,11 @@
 
   <p>
     <%= f.label :Location %> 
-    <%= f.select :location, options_for_select([[@user.location, @user.location], ['', ''], ['Micronesia & Palau' ,'Micronesia & Palau'], ['Azerbaijan', 'Azerbaijan'],
-		    ['Albania' ,'Albania'],]) %>
-    <!-- add the names of installations in the list here -->
+    <%= f.collection_select(:location, Installation.all, :installation, :installation, :include_blank => "None") %>
   </p>
 
   <p><%= f.label :Language_Contribution %> 
-    <%= f.select :language_contribution, options_for_select([[@user.language_contribution, @user.language_contribution], ['All', 'All'], ['Amharic' ,'Amharic'], ['Chuukese', 'Chuukese'],
-		    ['Welsh' ,'Welsh'],]) %>
-    <!-- add the names of languages in the list here manually-->
+    <%= f.collection_select(:lang, Language.all, :name, :name, :include_blank => "All") %>
   </p>
 
   <p>
