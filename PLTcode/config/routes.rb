@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+   get '*unmatched_route', :to => 'welcome#index', :alert => 'No such route exists.'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

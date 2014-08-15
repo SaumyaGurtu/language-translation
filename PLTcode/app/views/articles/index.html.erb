@@ -34,10 +34,6 @@
 <% if article.language.name == current_user.lang %>
 <li>
 <p>
-  <strong>Language:</strong>  <!-- remove this later because there is no need for it, just there for testing -->
-  <%= article.language.name if article.language.present? %>
-</p>
-<p>
   <strong>Picture:</strong>
   <%= image_tag(article.picture_url, :width => 400) if article.picture.present? %>
 </p>

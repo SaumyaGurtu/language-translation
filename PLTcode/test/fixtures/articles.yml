@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  english: MyText
-  phonetic: MyText
+  id: 1
+  english: MyText2
+  phonetic: MyTextp2
 
 two:
-  english: MyText
-  phonetic: MyText
+  id: 2
+  english: MyText1
+  phonetic: MyTextp1

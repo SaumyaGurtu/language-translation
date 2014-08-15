@@ -63,7 +63,7 @@ CanCan is a great gem for implementing model permissions. The main reasons I cho
 
 ## How to run this application?
 
-1. Download the zip file from : https://github.com/SaumyaGurtu/PLT link.
+1. Download the zip PLTcode file from repository.
 2. Extract the folder and type "cd foldername".
 3. Do "rake db:migrate".
 4. Do "rake db:seed".
