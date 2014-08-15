@@ -54,4 +54,40 @@ class UserTest < ActiveSupport::TestCase
      assert_not user.save, "Saved the user without its last_name"
    end
 
+   test "password and its confirmation are same" do
+     user = User.new
+     user.username='Alia'
+     user.role='Guest'
+     user.login_approval='Not_Yet'
+     user.first_name='Aliaa'
+     user.last_name='Bhatt'
+     user.password='Alia'
+     user.password_confirmation='Alia'
+     assert user.save, "Saved user has no authentication error"
+   end
+
+   test "password (is empty) and its confirmation are different" do
+     user = User.new
+     user.username='Alia'
+     user.role='Guest'
+     user.login_approval='Not_Yet'
+     user.first_name='Aliaa'
+     user.last_name='Bhatt'
+     user.password=''
+     user.password_confirmation='Alia'
+     assert_not user.save, "Saved user has empty sting as password authentication error"
+   end
+
+   test "password and its confirmation are different" do
+     user = User.new
+     user.username='Alia'
+     user.role='Guest'
+     user.login_approval='Not_Yet'
+     user.first_name='Aliaa'
+     user.last_name='Bhatt'
+     user.password='Not'
+     user.password_confirmation='Alia'
+     assert_not user.save, "Saved user has authentication error"
+   end
+
 end
