@@ -20,11 +20,53 @@ one:
  updated_at: 2014-08-15 14:06:54
  first_name: Walter
  last_name: Wilkins
- email: 
+ email: nil 
  username: Wander
- location: 
- contact: 
- gender: 
- role: Admin 
+ location: nil 
+ contact: nil
+ gender: nil
+ role: Admin
  login_approval: Yes
- lang:
+ lang: nil
+
+two:
+ id: 2
+ encrypted_password: <%= User.new.send(:password_digest, 'rose') %> 
+ first_name: Rose
+ last_name: Robinson
+ email: nil 
+ username: Rose
+ location: nil 
+ contact: nil
+ gender: nil
+ role: Volunteer
+ login_approval: Yes
+ lang: nil
+
+three:
+ id: 3
+ encrypted_password: <%= User.new.send(:password_digest, 'pamela') %> 
+ first_name: Pamela
+ last_name: Vickers
+ email: nil 
+ username: Pamela
+ location: nil 
+ contact: nil
+ gender: nil
+ role: Contributor
+ login_approval: Yes
+ lang: nil
+
+four:
+ id: 4
+ encrypted_password: <%= User.new.send(:password_digest, 'sylvain') %> 
+ first_name: Sylvain
+ last_name: Abelard
+ email: nil 
+ username: Sylvain
+ location: nil 
+ contact: nil
+ gender: nil
+ role: Guest
+ login_approval: Not Yet
+ lang: nil

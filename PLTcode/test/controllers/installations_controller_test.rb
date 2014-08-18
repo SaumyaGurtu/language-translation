@@ -3,13 +3,14 @@ require 'test_helper'
 class InstallationsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   fixtures :all
-  setup do
-    sign_in_user
-    @user = users(:one)
-  end
 
   test "the truth" do
      assert true
+  end
+
+  setup do
+    sign_in users(:one)
+    @user = users(:one)
   end
 
   test "index should render correct template and layout" do

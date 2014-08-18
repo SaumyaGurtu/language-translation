@@ -4,7 +4,7 @@ class SitesControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   fixtures :all
   setup do
-    sign_in_user
+    sign_in users(:one)
     @user = users(:one)
   end
 

@@ -40,11 +40,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
 gem 'cancan'
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
-end
 group :test do
   gem "webrat", "0.7.3", require: false
   gem "mocha", "~> 1.1", require: false
 end
-
+gem 'memory_test_fix'
